@@ -85,26 +85,32 @@ mode: studio  # or founder
 
 ## Estado actual
 
-**🚧 Work in progress — v0.1.0**
+**v1.0.0 — Initial feature-complete release**
 
-Este plugin está en fase inicial de construcción. SPIKE tracking: [DOJ-3190](https://linear.app/dojo-coding/issue/DOJ-3190).
+Completed scope del SPIKE [DOJ-3190](https://linear.app/dojo-coding/issue/DOJ-3190): **21 skills + 1 reference doc + scaffolding**.
 
-**Completado**:
+⚠️ **Disclaimer de stability**: v1.0.0 marca feature-completeness per plan original, pero **NO está battle-tested**. Breaking changes posibles en v1.x mientras dog-fooding revela issues. See [CHANGELOG.md](./CHANGELOG.md) for detailed release notes.
 
-- ✅ Scaffolding del repo (plugin.json, LICENSE, README, gitignore)
-- ✅ Primer skill: `structure-decision`
+### Skills completos (21)
 
-**En progreso**:
+**Core (10)** — ambos modos:
+- `structure-decision` | `structure-evolution-roadmap` | `jurisdiction-matrix` (reference doc) | `accelerator-launchpad` | `three-horizons` | `explore-exploit` | `innovation-scorecard` | `cost-of-delay-cd3` | `sweat-equity-agreement` | `improvement-kata`
 
-- 🚧 `studio-thesis` (govclab 37-word)
-- 🚧 `accelerator-launchpad`
+**Studio mode (9)**:
+- `studio-thesis` | `studio-focus` | `secret-sauce` | `studio-archetype-selector` | `vertical-charter` | `shared-services-ledger` | `venture-spin-out-playbook` | `attached-fund-structure` | `mensarius-oath-adoption`
 
-**Pendiente** (roadmap):
+**Founder mode (3)**:
+- `liability-contagion-analysis` | `cap-table-per-venture` | `when-to-become-studio`
 
-- ⏳ `structure-evolution-roadmap`, `jurisdiction-matrix`
-- ⏳ Studio mode skills (9 skills)
-- ⏳ Founder mode skills (3 skills)
-- ⏳ Core skills restantes (three-horizons, innovation-scorecard, cost-of-delay-cd3, etc.)
+### ⚠️ Disclaimers legales
+
+Skills que tocan dominios legales/fiscales incluyen explicit disclaimers:
+- `structure-decision`, `structure-evolution-roadmap`, `jurisdiction-matrix`
+- `sweat-equity-agreement`, `cap-table-per-venture`
+- `attached-fund-structure`, `venture-spin-out-playbook`
+- `shared-services-ledger`, `liability-contagion-analysis`
+
+Estos skills generan material de preparación estructurada — **NO son asesoría legal**. Validar con abogados especializados antes de actuar.
 
 ## Instalación
 
