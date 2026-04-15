@@ -50,8 +50,24 @@ Si una venture:
 
 ... los **assets de TODAS las demás ventures** bajo la misma LLC están en riesgo.
 
-Esto se llama **liability contagion** (contagio de responsabilidad) o
-**piercing the corporate veil** (perforar el velo corporativo) en casos extremos.
+Esto se llama **liability contagion** (contagio de responsabilidad) — también referido como **intra-LLC cross-venture contamination** en literatura legal US.
+
+### ⚠️ Distinción crítica: contagion NO es piercing the corporate veil
+
+Son **dos doctrinas distintas** que founders suelen confundir. Confundirlas lleva a remedies equivocados:
+
+| Concepto | Qué protege / qué vulnera | Cómo se activa | Remedy correcto |
+|---|---|---|---|
+| **Intra-LLC contagion** (esta skill) | Los assets de Venture A están expuestos a demandas contra Venture B cuando ambas están en la misma LLC | Operar múltiples businesses bajo una sola entidad | **Multi-LLC** — separar cada venture en su propia entidad |
+| **Piercing the corporate veil** | Los **personal assets del founder** (casa, cuentas personales, salario) están expuestos a demandas contra la LLC | Ignorar corporate formalities (commingling funds, undercapitalization, alter ego, fraude) | **Corporate hygiene** — bank accounts separados, documentación formal, proper capitalization, respect entity as distinct |
+
+**No es una versión "extrema" de la otra**. Son vectores de riesgo independientes:
+
+- Podés sufrir **contagion sin veil piercing**: 3 ventures bajo una LLC, demanda a venture A toca assets de B y C (no necesita piercing). Multi-LLC lo previene.
+- Podés sufrir **veil piercing sin contagion**: una sola LLC con una sola venture, pero founder comingla fondos personales con la LLC — el plaintiff perfora el velo y va contra casa del founder. Multi-LLC NO lo previene; solo corporate hygiene lo previene.
+- Podés sufrir **ambos** si tenés multi-venture + poor hygiene.
+
+**Remedy stack correcto**: Multi-LLC (previene contagion) **+** corporate formalities (previene veil piercing). Uno sin el otro deja una puerta abierta.
 
 ### Ejemplo concreto
 
@@ -249,8 +265,12 @@ Además de la estructura, recomendar:
    - Distribution rules que protejan assets de una brand de claims contra otra
 
 4. **Observable corporate formalities**: mantener registros separados, contabilidad
-   separada por brand, bank accounts separados por brand. Sin formalidades, la corte
-   puede pierce the corporate veil más fácilmente.
+   separada por brand, bank accounts separados por brand. Esto NO previene contagion
+   intra-LLC (solo multi-LLC lo hace), pero SÍ previene **piercing the corporate veil**
+   — una doctrina distinta donde plaintiff va contra **personal assets del founder**
+   si la LLC no se trata como entidad separada (commingling, undercapitalization,
+   alter ego). Los dos remedies se complementan: multi-LLC contra contagion, corporate
+   hygiene contra veil piercing.
 
 ### Paso 6 — Generate analysis doc
 
@@ -367,7 +387,7 @@ Actualmente DojoCoding Labs opera con una sola Texas LLC (Skip-CR pattern). Este
 
 - **Cuando dudés, separá**: el costo de una LLC adicional ($500-$2000/año) es insignificante vs. el downside de contagion
 - **Insurance + structure son complementarios**, NO sustitutivos: una buena insurance no elimina la necesidad de structure; una buena structure no elimina la necesidad de insurance
-- **Corporate formalities matter**: mantener DBAs registradas, bank accounts separados, y accounting separada. Sin esto, la corte puede ignorar la structure y pierce the veil.
+- **Corporate formalities matter (contra veil piercing, no contra contagion)**: mantener DBAs registradas, bank accounts separados, accounting separada. Esto protege **personal assets del founder** contra pierce the corporate veil — una doctrina **distinta** a intra-LLC contagion. Multi-LLC es el remedy para contagion; corporate hygiene es el remedy para veil piercing. Los dos son complementarios, no sustitutivos
 - **Re-evaluar en stage changes**: cuando una venture cruza milestones (MVP → revenue → scale), re-evaluar su rating de liability
 - **Contagion va en ambas direcciones**: una low-risk venture exitosa puede ser drenada por una high-risk venture fallida; también una low-risk con incidente reputacional menor puede contaminar una high-risk con compliance sensible
 

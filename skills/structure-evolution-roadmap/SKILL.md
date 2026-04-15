@@ -107,7 +107,7 @@ Cada migración tiene costos fiscales y legales que requieren abogado especializ
 **Pasos**:
 1. LLC-to-Corp conversion statutory (simple en Delaware, 1 filing)
 2. Redactar Certificate of Incorporation + bylaws C-Corp
-3. Issuar stock a los founders/empleados (equivalente a membership interests previos)
+3. Emitir (issue) stock a los founders/empleados (equivalente a membership interests previos)
 4. **83(b) elections dentro de 30 días** de cada issuance — CRÍTICO para QSBS
 5. Update cap table
 

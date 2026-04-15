@@ -34,7 +34,7 @@ Español. Términos de innovation/strategy en "español (English)" primera vez.
 
 ## Framework
 
-De Geoffrey Moore (adaptado en Lean Enterprise cap. 2):
+Attribution chain: originado en **McKinsey** ("The Alchemy of Growth", Baghai/Coley/White 1999), popularizado por **Geoffrey Moore** ("Escape Velocity" 2011), y adaptado para enterprise transformation en **Lean Enterprise** cap. 2 (Humble/Molesky/O'Reilly 2015):
 
 ### Horizon 1 (H1) — Current Businesses (0-12 meses)
 
@@ -251,7 +251,8 @@ Ejemplo con ventures reales (snapshot estimado Q2 2026):
 
 ## Recursos
 
-- **Lean Enterprise** (Humble, Molesky, O'Reilly, 2015) — cap. 2 "Start with the Customer"
-- Geoffrey Moore — *Escape Velocity* (HarperBusiness 2011), origen del framework Horizons
+- **Baghai, Coley, White** — *The Alchemy of Growth* (Perseus 1999) — **origen** del framework McKinsey Three Horizons
+- **Geoffrey Moore** — *Escape Velocity* (HarperBusiness 2011) — popularización para tech strategy
+- **Lean Enterprise** (Humble, Molesky, O'Reilly, 2015) — cap. 2 "Start with the Customer" — adaptación enterprise
 - [Intuit Three Horizons case study](https://www.intuit.com/company/about-intuit/)
 - [Google 70-20-10 allocation](https://hbr.org/2006/11/investing-in-the-it-that-makes-a-competitive-difference)

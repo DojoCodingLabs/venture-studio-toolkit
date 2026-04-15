@@ -101,19 +101,58 @@ recibe **0 shares**.
 - **Double trigger**: vesting acelera solo si (a) se vende la company Y (b) la persona es despedida post-acquisition
 - **Most common for founders**: double trigger (balance entre proteger founder y mantener retention post-acquisition)
 
-### 4. 83(b) election (solo US entities)
+### 4. 83(b) election (solo US entities) — tratamiento diferenciado por entity type
 
-**CRÍTICO para US LLCs/Corps**:
+**⚠️ La respuesta NO es la misma para C-Corp, LLC profits interests, y LLC capital interests.** Cada caso se rige por IRS rules distintas.
 
-- Al recibir shares sujetas a vesting, **sin 83(b) election** pagás impuestos sobre el valor cuando cada tranche vestea (potentially huge si la startup crece rápido)
-- **Con 83(b) election** dentro de 30 días de la grant, pagás impuestos solo sobre el valor hoy (low valuation = low tax)
+#### Caso A — C-Corp restricted stock (o LLC capital interests)
+
+**CRÍTICO**: sin 83(b) filing dentro de 30 días del grant, pagás **ordinary income tax** sobre el FMV de cada tranche al momento del vest (potentially huge si la startup crece rápido entre grant y vest).
+
+- **Con 83(b)**: pagás tax sobre FMV **hoy** (usualmente ≈0 si la company es early-stage), y todo apreciación futura se trata como capital gains al selling event.
+- **Sin 83(b)**: pagás ordinary income tax en cada vesting tranche sobre el FMV de ese momento — a ordinary income rates (hasta 37% federal + state), NO capital gains.
 - **Failure to file**: irreversible. Perdés el beneficio fiscal para siempre.
 
-**Proceso**:
+#### Caso B — LLC profits interests (Rev. Proc. 2001-43 / 93-27 safe harbor)
+
+Una **profits interest** es un grant que solo participa en apreciación **futura** de la LLC (zero liquidation value at grant — si la LLC se liquidara inmediatamente, el recipient no recibiría nada).
+
+Bajo **Rev. Proc. 93-27** (condiciones del safe harbor) y **Rev. Proc. 2001-43** (aclara que vesting no rompe el safe harbor):
+
+- El grant **no es taxable event** — zero ordinary income en grant
+- Vesting **no es taxable event** — el recipient NO paga ordinary income en cada tranche (a diferencia del Caso A)
+- 83(b) election **NO es estrictamente necesario** para diferir tax, porque no hay tax que diferir
+- **Pero**: practitioners frecuentemente filing 83(b) como "protective election" — cero costo (tax = $0 sobre liquidation value de $0) y elimina riesgo de que el IRS challenge la caracterización profits-vs-capital interest
+
+**Condiciones del safe harbor** (todas deben cumplirse):
+1. Grant en una partnership/LLC (taxed as partnership)
+2. No relacionada con predictable stream of income (rental income, high-quality bonds)
+3. Recipient no dispone del interest within 2 años del grant
+4. Interest no es "publicly traded partnership"
+
+**⚠️ Si el grant falla el safe harbor** (ej: LLC es effectively a disguised corporation, o profits interest tiene liquidation value >$0 at grant), cae en Caso A o C y 83(b) vuelve a ser crítico.
+
+#### Caso C — LLC capital interests (membership interests con liquidation value)
+
+Si el grant otorga participation en el capital actual de la LLC (no solo future appreciation — ej: "you get 10% of everything including current assets"), se trata **análogamente a C-Corp restricted stock**:
+- 83(b) es crítico por las mismas razones del Caso A
+- Failure to file = ordinary income tax en cada vesting tranche sobre FMV current
+
+#### Tabla resumen
+
+| Entity / grant type | Default tax at grant | Default tax at vest | 83(b) necesidad | Razón |
+|---|---|---|---|---|
+| C-Corp restricted stock | $0 (unvested) | Ordinary income sobre FMV | **Crítico** | Evita ordinary rates en apreciación |
+| LLC **profits interests** (Rev. Proc. 93-27/2001-43 safe harbor) | $0 | $0 | **Protective** (optional but common) | No hay tax que diferir; filing just-in-case |
+| LLC **capital interests** | Ordinary income sobre FMV current | Ordinary income sobre FMV | **Crítico** | Trata igual que C-Corp restricted stock |
+
+**Proceso 83(b) (cuando aplica — Caso A/C siempre; Caso B protective)**:
 1. Receive grant document
-2. Dentro de 30 días: enviar 83(b) election form al IRS (certified mail, return receipt)
+2. Dentro de 30 días del grant: enviar 83(b) election form al IRS (certified mail, return receipt)
 3. Dar copia al company tax records
-4. Guardar receipt para life
+4. Guardar receipt permanentemente (IRS no confirma filing, la receipt es tu prueba)
+
+**⚠️ DISCLAIMER**: estas reglas son US federal tax. State tax puede diverger. Siempre consultar tax attorney o CPA especializado en equity compensation antes de actuar. El failure to file es irreversible — y el filing incorrecto también tiene consecuencias.
 
 ### 5. Clawback / buyback provision
 
@@ -218,9 +257,14 @@ employees después de Series A.
 
 ### Paso 6 — 83(b) check (si US entity)
 
-**SE-10**: "¿La entity está incorporada en US (Delaware LLC, Delaware C-Corp, etc.)?
-- Sí → el recipient DEBE filing 83(b) election dentro de 30 días del grant. Incluir recordatorio + instrucciones en el acuerdo.
-- No (entity non-US) → no aplica 83(b), pero validar tax implications en jurisdicción del recipient"
+**SE-10**: "¿La entity está incorporada en US? Y si es LLC, ¿el grant es profits interest o capital interest? (Ver sección 4 para tabla completa.)
+
+- **US C-Corp** (Delaware/Wyoming/Texas C-Corp) con restricted stock → 83(b) **crítico**, 30 días del grant, irreversible
+- **US LLC profits interest** (Rev. Proc. 93-27/2001-43 safe harbor) → 83(b) **protective** (recomendado pero no estrictamente requerido; cero costo)
+- **US LLC capital interest** (recipient gets % of current capital, not just future appreciation) → 83(b) **crítico**, mismo tratamiento que C-Corp restricted stock
+- **Non-US entity** → no aplica 83(b); validar tax rules en la jurisdicción de incorporación (ej: en MX/CR/CO sweat equity tiene reglas distintas) Y en la jurisdicción de residencia del recipient
+
+Incluir recordatorio + instrucciones en el acuerdo cuando 83(b) aplique."
 
 ### Paso 7 — Generate agreement
 
@@ -257,18 +301,24 @@ Generar `./portfolio/{venture}/equity/sweat-equity-{recipient}.md`:
 
 ## 4. 83(b) election (if US entity)
 
-**⚠️ CRITICAL**: El recipient DEBE file 83(b) election con IRS dentro de 30 días
-del grant date ([YYYY-MM-DD]) para elegir pagar impuestos sobre valor actual
-en lugar de value al momento de cada vesting.
+**Grant type**: [C-Corp restricted stock / LLC profits interest (safe harbor) / LLC capital interest]
 
-**Instrucciones**:
+**83(b) necesidad** (seleccionar según grant type — ver SKILL sección 4 para reglas completas):
+
+- **C-Corp restricted stock** → **CRÍTICO**: file dentro de 30 días o pagás ordinary income tax sobre FMV de cada vesting tranche
+- **LLC profits interest** (Rev. Proc. 93-27/2001-43 safe harbor) → **PROTECTIVE** (recomendado): no hay tax que diferir, pero filing elimina riesgo de IRS challenge. Zero cost porque FMV de profits interest at grant = $0
+- **LLC capital interest** → **CRÍTICO**: tratamiento análogo a C-Corp restricted stock
+
+**Instrucciones (cuando aplique)**:
 1. Download Form 83(b) election letter (template standard)
-2. Fill with: name, SSN/EIN, Company info, grant date, number of shares, FMV per share at grant
+2. Fill with: name, SSN/EIN, Company info, grant date, number of shares / units, FMV per share at grant
 3. Send via **certified mail** (USPS, con return receipt) al IRS office donde file personal taxes
 4. Copia al company (agregar al cap table records)
-5. Guardar receipt del certified mail para tax records
+5. Guardar receipt del certified mail para tax records **permanentemente** (IRS no emite confirmación; esta receipt es tu única prueba)
 
-**Deadline**: [grant date + 30 días]
+**Deadline**: [grant date + 30 días] — irreversible si se pierde.
+
+**⚠️ Si grant es LLC profits interest**: antes de asumir safe harbor, validar que cumple las 4 condiciones de Rev. Proc. 93-27 (ver SKILL sección 4 Caso B). Consultar tax attorney.
 
 ## 5. Acceleration
 
@@ -315,7 +365,7 @@ to Company (standard IP assignment provisions).
 ## Principios clave
 
 - **Siempre cliff**: sin cliff, cualquiera puede agarrar shares y desaparecer
-- **83(b) no es opcional en US**: filing tardío es irreversible, pérdida significativa
+- **83(b) en US depende del grant type**: crítico para C-Corp restricted stock y LLC capital interest; protective (optional) para LLC profits interest bajo Rev. Proc. 93-27/2001-43 safe harbor. Filing tardío es irreversible en todos los casos donde aplica
 - **Valuation conservador**: low valuation at grant = low tax liability
 - **IP assignment explícito**: si no se asigna IP, la persona puede reclamar ownership
 - **Escrito, no verbal**: sweat equity informal termina en litigation
