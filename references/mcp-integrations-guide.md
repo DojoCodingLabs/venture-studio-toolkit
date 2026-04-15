@@ -144,25 +144,25 @@ Slack notifications del plugin**. Skills que usan Slack MCP deben:
 
 ## Patrón de integration recomendado
 
-Cuando un skill usa MCP:
+Cuando un skill usa MCP, seguir este patrón en 4 pasos:
 
+**1. Check MCP availability** (try detect via tool search o config)
+
+- Available → use MCP capabilities
+- Not available → fall back a manual flow (pedir user input directly)
+
+**2. ALWAYS provide manual fallback** (no hard requirement on MCP)
+
+**3. Document expected MCP en skill frontmatter**:
+
+```yaml
+mcp_recommended:
+  - linear       # Enhances venture/team discovery
+  - context7     # Current legal template versions
+mcp_required: [] # Ningún MCP es hard requirement
 ```
-1. Check MCP availability (try detect via tool search o config)
-   ├─ Available → use MCP capabilities
-   └─ Not available → fall back a manual flow (pedir user input directly)
 
-2. ALWAYS provide manual fallback (no hard requirement on MCP)
-
-3. Documented expected MCP en skill frontmatter:
-   ```yaml
-   mcp_recommended:
-     - linear  # Enhances venture/team discovery
-     - context7  # Current legal template versions
-   mcp_required: []  # Ningún MCP es hard requirement
-   ```
-
-4. User can proceed sin MCPs — skill works solo, outputs manualmente.
-```
+**4. User can proceed sin MCPs** — skill works solo, outputs manualmente.
 
 ---
 

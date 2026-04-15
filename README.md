@@ -154,19 +154,26 @@ El plugin puede consumir MCPs externos para enriquecer skills específicos (ver
 
 ## Estado actual
 
-**v1.0.0 — Initial feature-complete release**
+**v1.2.0 — Services Hub pattern + docs overhaul**
 
-Completed scope del SPIKE [DOJ-3190](https://linear.app/dojo-coding/issue/DOJ-3190): **21 skills + 2 reference docs + scaffolding**.
+Historial de releases (ver [CHANGELOG.md](./CHANGELOG.md) para detalles):
 
-⚠️ **Disclaimer de stability**: v1.0.0 marca **feature-completeness** (scope cumplido per SPIKE), NO **maturity**. El plugin está en fase de **dog-food** y aún no battle-tested con usuarios externos. Durante la serie v1.x:
+- **v1.0.0** (2026-04-14) — initial feature-complete scope (21 skills + 2 reference docs per SPIKE [DOJ-3190](https://linear.app/dojo-coding/issue/DOJ-3190))
+- **v1.1.0** (2026-04-14) — Services Hub pattern (patrón #6) + 3-mode studio readiness (Epic [DOJ-3193](https://linear.app/dojo-coding/issue/DOJ-3193))
+- **v1.2.0** (2026-04-15) — gastronomic analogy + Mermaid diagrams + bilingual/MCP reference guides
+
+**Total actual**: **22 skills + 4 reference docs + scaffolding**.
+
+⚠️ **Disclaimer de stability**: v1.x marca **feature-completeness** (scope cumplido per SPIKE), NO **maturity**. El plugin está en fase de **dog-food** y aún no battle-tested con usuarios externos. Durante la serie v1.x:
 
 - **Semver deviation intencional**: puede haber breaking changes en releases menores (v1.1, v1.2, etc.) mientras iteramos sobre feedback de dog-food real. Esto viola semver tradicional deliberadamente — es un trade-off consciente para permitir rápida iteración en esta fase inicial.
 - **Strict semver compliance arranca en v2.0.0** una vez validado con ≥3 usuarios externos completando flows end-to-end. Desde v2.0 en adelante, breaking changes requieren major version bump.
 - **Cambios esperados en v1.x**: skill APIs, output formats, template structures pueden cambiar basado en findings del dog-food.
+- **Implementation status v1.2**: bilingual y MCP integration están documentados como frameworks pero **implementation per-skill es v1.3+ roadmap**.
 
-Si necesitás stability garantizada, esperar a v2.0.0. Para exploración activa + feedback loop, v1.x es apropiado. See [CHANGELOG.md](./CHANGELOG.md) para historial de cambios.
+Si necesitás stability garantizada, esperar a v2.0.0. Para exploración activa + feedback loop, v1.x es apropiado.
 
-### Skills completos (21)
+### Skills completos (22)
 
 **Core (10)** — ambos modos:
 - `structure-decision` | `structure-evolution-roadmap` | `jurisdiction-matrix` (reference doc) | `accelerator-launchpad` | `three-horizons` | `explore-exploit` | `innovation-scorecard` | `cost-of-delay-cd3` | `sweat-equity-agreement` | `improvement-kata`
@@ -176,6 +183,17 @@ Si necesitás stability garantizada, esperar a v2.0.0. Para exploración activa 
 
 **Founder mode (3)**:
 - `liability-contagion-analysis` | `cap-table-per-venture` | `when-to-become-studio`
+
+**Services Hub mode (1, nuevo en v1.1)**:
+- `services-hub-setup` — patrón #6 implementation con MSA templates
+
+### Reference docs (4)
+
+- `jurisdiction-matrix.md` — 16 jurisdicciones (LATAM 8 + US 3 + Offshore 3 + EU 2)
+- `dojocoding-labs-canonical-thesis.md` — canonical studio thesis case
+- `lapc506-services-hub-canonical.md` (nuevo en v1.1) — canonical Services Hub @lapc506
+- `bilingual-output-guide.md` (nuevo en v1.2) — YAML config schema + translation rules
+- `mcp-integrations-guide.md` (nuevo en v1.2) — MCPs que enhance qué skills
 
 ### ⚠️ Disclaimers legales
 
