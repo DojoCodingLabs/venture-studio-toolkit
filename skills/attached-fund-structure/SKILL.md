@@ -82,33 +82,21 @@ Español. Términos de fund formation en "español (English)" primera vez.
 
 ## La arquitectura recomendada (govclab)
 
-```
-┌────────────────────────────────────────────┐
-│  Management Company                        │
-│  (operaciones del studio — contratos,     │
-│   servicios, gestión de portfolio)         │
-└───────────────┬────────────────────────────┘
-                │ (provides services to)
-                ▼
-┌────────────────────────────────────────────┐
-│  GP Entity (General Partner)               │
-│  (administradora del fund — decisions      │
-│   de inversión, gestión del fund)          │
-└───────────────┬────────────────────────────┘
-                │ (manages)
-                ▼
-┌────────────────────────────────────────────┐
-│  Fund Entity (LP)                          │
-│  (donde viven los recursos de los LPs —   │
-│   vehículo que invierte en ventures)       │
-└───────────────┬────────────────────────────┘
-                │ (invests in)
-                ▼
-┌────────────────────────────────────────────┐
-│  Portfolio Companies                       │
-│  (las ventures — pueden venir del studio   │
-│   o ser inversiones externas)              │
-└────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    MC["🏢 <b>Management Company</b><br/>Operaciones del studio<br/>Contratos · servicios · gestión de portfolio"]
+    GP["⚖️ <b>GP Entity (General Partner)</b><br/>Administradora del fund<br/>Decisions de inversión · gestión del fund"]
+    Fund["💰 <b>Fund Entity (LP)</b><br/>Vehículo de inversión<br/>Donde viven los recursos de los LPs"]
+    Portfolio["🚀 <b>Portfolio Companies</b><br/>Las ventures<br/><i>Del studio o inversiones externas</i>"]
+
+    MC -->|"provides services to"| GP
+    GP -->|"manages"| Fund
+    Fund -->|"invests in"| Portfolio
+
+    style MC fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    style GP fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style Fund fill:#fff9c4,stroke:#f57f17,stroke-width:2px
+    style Portfolio fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
 ```
 
 ### Por qué esta separación
