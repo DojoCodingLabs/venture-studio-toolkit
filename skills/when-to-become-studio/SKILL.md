@@ -120,43 +120,91 @@ Marcar (✓ por cada signal positivo):
 
 ---
 
-## Transición: serial entrepreneur → studio
+## Transiciones por modo
 
-Si readiness = go, pasos para formalizar:
+Los pasos de formalización **dependen del modo destino**. NO son genéricos — Modo 2 (Services Hub) y Modo 3 (Formal studio con fund) requieren infraestructura legal y operativa muy distinta.
 
-### Paso 1: Legal formalization
+### Transición hacia Modo 2 — Services Hub operator
 
-- Ver skill `structure-decision` para elegir legal structure
-- Típicamente: Management Co (donde vive el studio) + LLCs/entities per venture (si
-  no están formalizadas)
+Aplica si el scoring fue 5-7 ✓, o 8-9 ✓ sin plan fund atado real.
 
-### Paso 2: Studio thesis
+#### Paso 1: Legal formalization
 
-- Ver skill `studio-thesis` para articular thesis de 37 palabras
-- El thesis captures the pattern/focus across tus ventures
+- Ver skill `structure-decision` patrón #6 (Services Hub + Independent Ventures)
+- Typically: 1 Services LLC central + N Venture LLCs independientes (una por venture)
+- **NO holding, NO Management Co, NO fund entities** — la Services LLC es un vendor,
+  no un shareholder
 
-### Paso 3: Systematic methodology
+#### Paso 2: MSA + transfer pricing
 
-- Documentar steps que seguís para launch
-- Incluye: ideation process, validation, team formation, launch, scale-or-kill
+- Ver skill `services-hub-setup` para:
+  - MSA template bilateral (Services LLC ↔ cada Venture LLC)
+  - SOW templates por service type
+  - Transfer pricing cost-plus (5-10% markup típico)
+  - IP assignment rider (crítico para evitar IP contamination)
+
+#### Paso 3: Methodology (repetible sin fund)
+
+- Documentar steps que seguís para launch cada venture
+- Ideation, validation, team formation, launch, scale-or-kill
 - El toolkit completo (`business-model-toolkit`, `ux-research-toolkit`,
   `venture-studio-toolkit`) es la base metodológica
 
-### Paso 4: Team + leadership
+#### Paso 4: Shared services operations
 
-- Identifica rol(es) dedicated al studio work (vs. per-venture)
-- Hiring plan — GPs, operators, etc.
+- Ver skill `shared-services-ledger` **variant Services Hub**
+- Bilateral MSAs, NO consolidated reporting
+- Time tracking + billing per venture
 
-### Paso 5: Shared services
+#### Paso 5: Governance (light)
 
-- Ver skill `shared-services-ledger` para organizar recursos compartidos
-- Legal, accounting, infrastructure, marketing
+- Portfolio review cadence — periodic ventures check-in
+- NO quarterly LP reporting (no hay LP)
+- Decision framework para kill/scale per venture independiente
 
-### Paso 6: Governance
+---
 
-- Quarterly reviews de portfolio (ver `three-horizons`, `innovation-scorecard`)
-- Decision framework para kill/scale de ventures (ver `cost-of-delay-cd3`,
-  `improvement-kata`)
+### Transición hacia Modo 3 — Formal venture studio con fund
+
+Aplica solo si el scoring fue 8-9 ✓ **Y** hay plan fund atado real (LP conversations iniciadas).
+
+#### Paso 1: Legal formalization
+
+- Ver skill `structure-decision` patrón #7 (Multi-LLC + Holding)
+- Stack: Holding Co (parent) + Management Co + GP entity + Fund LP + N Venture Subsidiaries
+- Management Co provee services; Holding owns equity en ventures
+
+#### Paso 2: Fund structure
+
+- Ver skill `attached-fund-structure` para:
+  - Management Co + GP entity setup
+  - Fund LP formation (Delaware LP más común, o Cayman para LATAM LPs)
+  - LP subscription docs + PPM (Private Placement Memorandum)
+  - Management fee (2% típico) + carry (20% típico)
+
+#### Paso 3: LP-facing materials
+
+- Ver skills `studio-thesis` (37-word thesis), `studio-focus` (Stage × Geography × Industry),
+  `secret-sauce` (6-metric ranking)
+- Required para LP fundraising + credibility
+
+#### Paso 4: Methodology + systematic approach
+
+- Misma base metodológica que Modo 2, pero escalada
+- Track record quantificable para LP reporting
+
+#### Paso 5: Shared services operations
+
+- Ver skill `shared-services-ledger` **variant Full Studio**
+- Centralized via holding, consolidated financial statements
+- Transfer pricing evaluated at Holding level (often needs big 4 review)
+
+#### Paso 6: Governance (heavy)
+
+- **Quarterly LP reporting** (mandatory for fund compliance)
+- Portfolio reviews con `three-horizons`, `innovation-scorecard`
+- Kill/scale decisions con `cost-of-delay-cd3`, `improvement-kata`
+- Annual audit (often required by LP subscription docs)
 
 ---
 
@@ -226,22 +274,40 @@ Presentar las 9 señales una a una. Track scores.
 
 ## Verdict
 
-**[Listo / Casi listo / NO todavía]**
+**Modo recomendado: [Modo 1 — Serial entrepreneur puro / Modo 2 — Services Hub operator / Modo 3 — Formal venture studio con fund]**
 
-## [If ready] Transition roadmap
+Rationale:
+- Score: X/9
+- Fund plan atado (real, con LP conversations iniciadas): [Yes / No / N/A]
+- Routing aplicado: [0-4 → Modo 1 / 5-7 → Modo 2 / 8-9 + fund plan real → Modo 3 / 8-9 sin fund plan → Modo 2]
 
-[Steps 1-6 con deadlines]
+## [Si Modo 2 o Modo 3] Transition roadmap
 
-## [If not ready] Gaps to close
+Seguir el roadmap específico del modo:
+
+### Si Modo 2 — Services Hub operator:
+- `structure-decision` patrón #6 (Services Hub + Independent Ventures)
+- `services-hub-setup` para MSA template + transfer pricing + IP assignment rider
+- `shared-services-ledger` variant Services Hub (bilateral MSAs, NO holding)
+
+### Si Modo 3 — Formal venture studio con fund:
+- `structure-decision` patrón #7 (Multi-LLC + Holding)
+- `attached-fund-structure` para Management Co + GP + Fund LP stack
+- `studio-thesis` + `studio-focus` + `secret-sauce` para LP-facing materials
+- `shared-services-ledger` variant Full Studio (centralized via holding)
+
+[Steps específicos con deadlines]
+
+## [Si Modo 1] Gaps to close hacia Modo 2
 
 1. [Gap]: [plan + timeline]
 2. [Gap]: [plan + timeline]
 
-**Re-assessment date**: [date]
+**Re-assessment date**: [date realista, 6-12 meses]
 
 ## Notes
 
-[Observations particulares sobre tu caso]
+[Observations particulares sobre tu caso — incluyendo si el fund plan es aspiracional vs real, si hay edge cases del routing, etc.]
 ```
 
 ---
