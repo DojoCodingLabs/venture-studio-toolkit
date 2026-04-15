@@ -89,7 +89,13 @@ mode: studio  # or founder
 
 Completed scope del SPIKE [DOJ-3190](https://linear.app/dojo-coding/issue/DOJ-3190): **21 skills + 2 reference docs + scaffolding**.
 
-⚠️ **Disclaimer de stability**: v1.0.0 marca feature-completeness per plan original, pero **NO está battle-tested**. Breaking changes posibles en v1.x mientras dog-fooding revela issues. See [CHANGELOG.md](./CHANGELOG.md) for detailed release notes.
+⚠️ **Disclaimer de stability**: v1.0.0 marca **feature-completeness** (scope cumplido per SPIKE), NO **maturity**. El plugin está en fase de **dog-food** y aún no battle-tested con usuarios externos. Durante la serie v1.x:
+
+- **Semver deviation intencional**: puede haber breaking changes en releases menores (v1.1, v1.2, etc.) mientras iteramos sobre feedback de dog-food real. Esto viola semver tradicional deliberadamente — es un trade-off consciente para permitir rápida iteración en esta fase inicial.
+- **Strict semver compliance arranca en v2.0.0** una vez validado con ≥3 usuarios externos completando flows end-to-end. Desde v2.0 en adelante, breaking changes requieren major version bump.
+- **Cambios esperados en v1.x**: skill APIs, output formats, template structures pueden cambiar basado en findings del dog-food.
+
+Si necesitás stability garantizada, esperar a v2.0.0. Para exploración activa + feedback loop, v1.x es apropiado. See [CHANGELOG.md](./CHANGELOG.md) para historial de cambios.
 
 ### Skills completos (21)
 
