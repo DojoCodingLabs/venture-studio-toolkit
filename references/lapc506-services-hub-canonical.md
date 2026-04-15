@@ -85,32 +85,28 @@ Liability contagion analysis (ver dog-food output `liability-contagion-analysis.
 
 ## Architecture propuesta
 
-```
-┌─────────────────────────────────────────────┐
-│  LAPC506 Services LLC (Delaware)            │
-│  - Owner: Andrés 100%                       │
-│  - Role: shared services provider           │
-│  - Not a holding (no owns equity in ventures)│
-│  - Banking: Mercury                         │
-│  - Accounting: QuickBooks                   │
-│  - Tax: pass-through (K-1 para Andrés)      │
-└──────────┬──────────────────────────────────┘
-           │
-           │ Bilateral MSAs + SOWs
-           │ cost-plus 10% markup
-           ▼
-┌─────────────────────┬─────────────────────┬────────────────────────┬──────────────────┐
-│  Altrupets LLC      │  Vertivolatam       │  Habitanexus LLC       │  Aduanext LLC    │
-│  (Delaware)         │  (US LLC pending +  │  (Delaware +           │  (Delaware +     │
-│                     │   SRL CR existing)  │   SRL CR via Sfera)    │   SRL CR)        │
-│                     │                     │                        │                  │
-│  Cap table:         │  Cap table:         │  Cap table:            │  Cap table:      │
-│  Andrés 100%*       │  Andrés + co-foun   │  Andrés + co-foun      │  Andrés + co-foun│
-│  (*VALIDAR cofoun)  │  Vertivo team       │  (*VALIDAR cofoun)     │  (*VALIDAR cofo) │
-│                     │                     │                        │                  │
-│  Future VC:         │  Future VC:         │  Future VC:            │  Future VC:      │
-│  [yes, post-PMF]    │  [yes, hardware VCs]│  [yes, proptech VCs]   │  [yes, LATAM B2B]│
-└─────────────────────┴─────────────────────┴────────────────────────┴──────────────────┘
+```mermaid
+flowchart TD
+    Hub["🏢 <b>LAPC506 Services LLC</b> (Delaware)<br/>Owner: Andrés 100%<br/>Role: shared services provider<br/><i>NOT a holding (no owns equity in ventures)</i><br/>Banking: Mercury · Accounting: QuickBooks<br/>Tax: pass-through (K-1 para Andrés)"]
+
+    Alt["🐾 <b>Altrupets LLC</b> (Delaware)<br/>Cap table: Andrés 100%*<br/>(*VALIDAR cofounders)<br/>Future VC: yes, post-PMF"]
+
+    Vert["🌱 <b>Vertivolatam</b><br/>US LLC pending + SRL CR existing<br/>(3-102-815230)<br/>Cap table: Andrés + Vertivo team<br/>Future VC: hardware VCs"]
+
+    Hab["🏠 <b>Habitanexus LLC</b><br/>Delaware + SRL CR via Sfera Legal<br/>Cap table: Andrés + cofounders<br/>Future VC: proptech VCs"]
+
+    Adu["📦 <b>Aduanext LLC</b><br/>Delaware + SRL CR<br/>Cap table: Andrés + cofounders<br/>Future VC: LATAM B2B SaaS"]
+
+    Hub -->|"MSA + SOWs<br/>cost-plus 10%"| Alt
+    Hub -->|"MSA + SOWs<br/>cost-plus 10%"| Vert
+    Hub -->|"MSA + SOWs<br/>cost-plus 10%"| Hab
+    Hub -->|"MSA + SOWs<br/>cost-plus 10%"| Adu
+
+    style Hub fill:#e3f2fd,stroke:#1976d2,stroke-width:3px
+    style Alt fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style Vert fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
+    style Hab fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    style Adu fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
 ```
 
 ---

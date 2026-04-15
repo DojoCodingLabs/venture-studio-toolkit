@@ -58,9 +58,67 @@ Para serial entrepreneurs con múltiples ventures personales. Incluye:
 - **Offshore holdings**: Cayman, Panamá, BVI
 - **EU founder options**: Portugal (Startup Visa + IFICI), Estonia (e-Residency) — referencias + checklist ligero
 
+## Analogía gastronómica de las estructuras LATAM
+
+Los abogados corporativos LATAM (Latitud, Manzano Law, Cooley) adoptaron una **analogía
+culinaria** para nombrar las estructuras corporativas — facilita memorización para
+founders no-legales:
+
+| Patrón | Analogía | Capas | Visualización |
+|---|---|---|---|
+| **Delaware Tostada** 🫓 | Tostada (2 tortillas) | 2 | US LLC → LATAM OpCo |
+| **Cayman Sandwich** 🥪 | Sandwich (3 panes) | 3 | Cayman HoldCo → DE LLC (midco) → LATAM OpCo |
+| **Multi-LLC + Holding** 🥐 | Mil hojas (4+ capas) | 4+ | Holding → Management Co → Fund GP/LP → N Venture LLCs |
+
+### ¿Por qué "Tostada"?
+
+**Delaware Tostada** es una estructura de **2 capas**:
+
+```mermaid
+flowchart TD
+    A["🫓 Delaware LLC<br/><i>pan de arriba</i><br/>US jurisdiction, VC-friendly<br/>Mercury banking"]
+    B["🫓 LATAM OpCo<br/><i>pan de abajo</i><br/>SRL CR / S.A.P.I. MX / S.A.S. CO<br/>Operaciones, empleados, facturación"]
+    A -->|"100% owns"| B
+
+    style A fill:#fff4e6,stroke:#d4a574,stroke-width:2px
+    style B fill:#fff4e6,stroke:#d4a574,stroke-width:2px
+```
+
+**Ventajas**: pass-through taxation (LLC en Delaware = pass-through), setup barato ($2-3k),
+VCs aceptan SAFEs/convertible notes.
+
+**Desventajas**: VCs NO aceptan priced rounds en LLC (necesitan C-Corp o Cayman). Para
+Series A+ hay que "graduar" a Cayman Sandwich.
+
+### ¿Por qué "Sandwich"?
+
+**Cayman Sandwich** agrega una capa intermedia (midco) = **3 capas**, como un sandwich:
+
+```mermaid
+flowchart TD
+    A["🍞 Cayman HoldCo<br/><i>pan de arriba</i><br/>Tax haven, 0% corp tax en foreign income<br/>LP-friendly"]
+    B["🧀 Delaware LLC<br/><i>queso en el medio (midco)</i><br/>US VC standard, flip-friendly"]
+    C["🍞 LATAM OpCo<br/><i>pan de abajo</i><br/>Operaciones, empleados, facturación"]
+    A -->|"100% owns"| B
+    B -->|"100% owns"| C
+
+    style A fill:#f5e6d3,stroke:#a0845c,stroke-width:2px
+    style B fill:#fff9c4,stroke:#d4a574,stroke-width:2px
+    style C fill:#f5e6d3,stroke:#a0845c,stroke-width:2px
+```
+
+**Stats**: [47.7% de los unicornios LATAM](https://latitud.com/blog/cayman-sandwich-corporate-structure-startups) usan Cayman Sandwich. Es el standard para Series A+ con VCs internacionales.
+
+**Regla de evolución**: pre-seed/seed = Tostada (flexible + barato). Series A priced round
+= graduar a Sandwich (Cayman HoldCo + Delaware midco + LATAM OpCo). Ver [`structure-evolution-roadmap`](./skills/structure-evolution-roadmap/SKILL.md) skill para triggers de migración.
+
+---
+
 ## Bilingual output
 
-Templates en español por defecto. Outputs configurables vía frontmatter YAML:
+Templates en español por defecto. Outputs configurables vía frontmatter YAML
+(ver [`references/bilingual-output-guide.md`](./references/bilingual-output-guide.md) para
+detalle):
 
 ```yaml
 language:
@@ -73,6 +131,17 @@ jurisdiction:
   target_investors: [LATAM, US]
 mode: studio  # or founder
 ```
+
+## MCP integrations (optional)
+
+El plugin puede consumir MCPs externos para enriquecer skills específicos (ver
+[`references/mcp-integrations-guide.md`](./references/mcp-integrations-guide.md) para setup):
+
+| MCP | Skills que se benefician | Valor |
+|---|---|---|
+| **Linear MCP** | `accelerator-launchpad`, `three-horizons`, `innovation-scorecard` | Import ventures desde Linear teams/projects, crear SPIKE issues automáticos |
+| **Context7 MCP** | Todos los skills con referencias legales | Docs actualizadas de Stripe, Mercury, Carta |
+| **Slack MCP** | `shared-services-ledger`, `innovation-scorecard` | Notificaciones automáticas de monthly allocations o KPI changes (opcional) |
 
 ## Fuentes metodológicas
 
