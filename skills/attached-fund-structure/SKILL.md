@@ -17,6 +17,34 @@ description: >
 Diseña la estructura legal para atar un fondo al studio operativo, siguiendo la
 arquitectura recomendada por govclab.
 
+## ⚠️ ¿Este skill es para vos?
+
+**Este skill es para venture studios con plan de fund atado (LP capital)**. Si sos
+serial entrepreneur o operador de studio sin plan de fund institucional,
+**probablemente NO necesitás esto**.
+
+### Casos donde este skill NO es para vos
+
+- **3-5 ventures personales con raises VC independientes per venture** → usar
+  `structure-decision` patrón #6 (Services Hub) + skill `services-hub-setup`
+- **Un solo venture con VC** → usar `structure-decision` para elegir Delaware Tostada,
+  Cayman Sandwich, o C-Corp apropiado
+- **Serial entrepreneur sin plan de fund institucional** → usar `when-to-become-studio`
+  para validar si necesitás formalizar (probablemente Mode 2 — Services Hub)
+- **Pre-track record studio** → esperar hasta tener 2+ exits o milestone equivalente
+  antes de considerar fund atado
+
+### Casos donde SÍ es para vos
+
+- Track record verificable de venture studio operando 2+ años
+- Plan concreto de levantar $2-10MM+ de Limited Partners institucionales
+- Team dedicated al studio work (no solo founders de ventures individuales)
+- Budget para setup legal $50k+ + fund admin $20-50k/año ongoing
+- LP prospects identificados con conversaciones iniciales (≥10 meetings)
+
+Si ninguno de estos aplica → volvé a `structure-decision` (especialmente patrón #6
+Services Hub) o `when-to-become-studio` para guía apropiada.
+
 ## ⚠️ DISCLAIMER LEGAL FUERTE
 
 **Fund formation es un dominio altamente regulado**. Las jurisdicciones tienen

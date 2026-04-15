@@ -1,18 +1,19 @@
 ---
 name: when-to-become-studio
-version: 1.0.0
+version: 1.1.0
 description: >
   Helps a serial entrepreneur decide whether to formalize their multi-venture
-  operation into a venture studio. Brief edge-case skill for founder-mode
-  transitions. Use when the user asks "when to become a studio", "serial
+  operation into a Services Hub or a formal Venture Studio. Evaluates 3 operating
+  modes (not binary): serial entrepreneur puro / services hub operator / formal
+  studio with fund. Use when the user asks "when to become a studio", "serial
   entrepreneur vs studio", "systematize multi-venture", "formalize studio",
-  "venture studio readiness", "/when-to-become-studio".
+  "services hub readiness", "venture studio readiness", "/when-to-become-studio".
 ---
 
-# When to Become a Studio
+# When to Become a Studio (3 operating modes)
 
-Ayuda a un serial entrepreneur a decidir si **formalizar su operación multi-venture
-como venture studio** vs. seguir operando como founder con múltiples proyectos.
+Ayuda a un serial entrepreneur a decidir **qué nivel de formalización** necesita su
+operación multi-venture. No es decisión binary — son **3 modos distintos** según signals.
 
 ## Regla de idioma
 
@@ -27,14 +28,56 @@ Español.
 
 ---
 
-## Serial entrepreneur vs. venture studio (diferencia clave)
+## Los 3 modos (middle ground introducido en v1.1)
 
-**Serial entrepreneur**: persona con múltiples ventures personales. Cada venture es
+### Modo 1 — Serial entrepreneur puro
+
+**Quién es**: persona con múltiples ventures personales sin methodology formal. Cada
+venture es "suya", ad-hoc process de launching, no shared infrastructure formal.
+
+**Structure típica**: Multi-LLCs independientes (ver `structure-decision` patrones 1-5).
+Sin Services LLC central.
+
+**Ejemplo**: founder con 2-3 startups, cada una en su propia LLC, operating independent.
+Sin MSAs entre entidades. Shared services = "yo trabajo en los 3 personalmente".
+
+### Modo 2 — Services Hub operator (NUEVO en v1.1)
+
+**Quién es**: serial entrepreneur con methodology repetible + shared services formales
+entre N ventures. Uses Services LLC central + bilateral MSAs. VC raises independent per
+venture, sin plan de fund atado.
+
+**Structure**: `structure-decision` patrón #6 (Services Hub + Independent Ventures) +
+`services-hub-setup` skill para MSAs + transfer pricing.
+
+**Ejemplo**: caso @lapc506 — 4 ventures personales (Altrupets, Vertivolatam, Habitanexus,
+Aduanext) + LAPC506 Services LLC proveyendo shared dev/design/marketing/legal con MSA
+bilateral per venture.
+
+### Modo 3 — Formal venture studio con fund
+
+**Quién es**: studio operator con track record cuantificable + plan de levantar LP
+capital via fund atado. Management Co + GP entity + Fund LP stack completo.
+
+**Structure**: `structure-decision` patrón #7 (Multi-LLC + Holding) + `attached-fund-structure`
+skill para Management Co + GP + LP layered.
+
+**Ejemplo**: studio con 2+ exits previos + plan de raise $5M LP fund para invertir en
+~15 ventures nuevas.
+
+---
+
+## Serial entrepreneur vs. venture studio vs. services hub (diferencias clave)
+
+**Serial entrepreneur puro**: persona con múltiples ventures personales. Cada venture es
 "suya". Ad-hoc process de launching. No hay "systematic method".
 
-**Venture studio**: organización con systematic approach a creating ventures.
-Metodología repetible, team dedicated, clear thesis, shared services. Ventures son
-"del studio" (al menos parcialmente).
+**Services Hub operator**: persona con múltiples ventures + methodology repetible +
+Services LLC central proveyendo shared services via MSAs. NO LP fund.
+
+**Venture studio formal**: organización con systematic approach a creating ventures.
+Metodología repetible, team dedicated, clear thesis, shared services, **plus LP fund
+atado**. Ventures son "del studio" (al menos parcialmente).
 
 ---
 
@@ -56,8 +99,24 @@ Marcar (✓ por cada signal positivo):
       empresa"
 - [ ] **Recursos para formalizar**: budget ≥ $20k para setup legal + operational
 
-**Decisión**:
-- 7-9 ✓: **Listo para studio**. Formalizar.
+**Decisión** (updated v1.1 — 3 modes):
+
+| Score | Recomendación | Siguiente skill |
+|---|---|---|
+| 0-4 ✓ | **Modo 1 — Serial entrepreneur puro** | Multi-LLCs via `structure-decision` (patrones 1-5). No formalizar más allá. |
+| 5-7 ✓ | **Modo 2 — Services Hub operator** (NUEVO) | `services-hub-setup` skill + `structure-decision` patrón #6 |
+| 8-9 ✓ + plan fund atado | **Modo 3 — Formal venture studio con fund** | `attached-fund-structure` skill + `structure-decision` patrón #7 |
+
+### Reglas adicionales para routing correcto
+
+- **Si score 5-7 pero con plan fund atado** → probablemente premature, validar que el
+  fund atado es real (LP conversations iniciadas, NO solo aspiracional). Si no es real →
+  stay en Services Hub hasta que track record + LP interest justifiquen fund.
+- **Si score 8-9 pero SIN plan fund atado** → NO necesitás formal studio con Holding.
+  Stay en Services Hub. Holding + Management Co overhead sin LP fund es waste.
+- **Legacy interpretation (v1.0)**: "7-9 ✓ = listo para studio" era simplification binaria.
+  En v1.1 differentiamos: la mayoría de "ready" are really Services Hub readiness, no
+  formal studio con fund.
 - 5-6 ✓: **Casi listo**. Completar gaps primero.
 - <5 ✓: **NO todavía**. Quedate como serial entrepreneur.
 

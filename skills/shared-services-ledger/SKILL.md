@@ -1,20 +1,56 @@
 ---
 name: shared-services-ledger
-version: 1.0.0
+version: 1.1.0
 description: >
-  Tracks how studio-level shared services (engineers, designers, marketing,
-  legal, accounting, infrastructure) are allocated across multiple ventures.
-  Essential for transfer pricing compliance, accurate venture P&Ls, and LP
-  reporting. Use when the user asks "shared services", "allocation",
+  Tracks how shared services (engineers, designers, marketing, legal,
+  accounting, infrastructure) are allocated across multiple ventures.
+  Supports two operating modes: Services Hub (bilateral MSAs, independent venture
+  cap tables) and Full Studio (centralized via Management Co + Holding).
+  Essential for transfer pricing compliance, accurate venture P&Ls, and
+  LP reporting. Use when the user asks "shared services", "allocation",
   "transfer pricing", "studio overhead", "intercompany services",
-  "/shared-services-ledger". STRONG TAX DISCLAIMER applies.
+  "services hub ledger", "MSA tracking", "/shared-services-ledger".
+  STRONG TAX DISCLAIMER applies.
 ---
 
 # Shared Services Ledger
 
-Registra cómo los **recursos compartidos del studio** (devs, diseño, marketing, legal,
+Registra cómo los **recursos compartidos** (devs, diseño, marketing, legal,
 contabilidad, infrastructure) se asignan entre las ventures del portafolio. Esencial para
 transfer pricing compliance y P&Ls accurate per venture.
+
+## Operating mode selection (v1.1)
+
+Antes de configurar el ledger, elegí el operating mode:
+
+| Mode | Entities involved | MSA structure | Skill complementario |
+|---|---|---|---|
+| **Services Hub** (patrón #6) | Services LLC + N Venture LLCs | Bilateral MSAs per venture, cap tables independent | `services-hub-setup` |
+| **Full Studio** (patrón #7) | Management Co + Holding + N Venture Subsidiaries | Centralized via holding + Management Co | `attached-fund-structure` |
+
+**Por default si no sabés qué elegir**: Services Hub. Full Studio requiere fund atado
+(LP capital) que la mayoría de serial entrepreneurs no tiene. Ver `when-to-become-studio`
+para routing correcto.
+
+### Differencias operacionales por mode
+
+**Services Hub mode**:
+
+- **MSAs**: bilaterales (Services LLC ↔ cada Venture LLC directly)
+- **Billing**: mensual individual per venture (monthly invoice flow)
+- **Reporting**: NO consolidated financial statements (each venture P&L independent)
+- **Transfer pricing**: evaluated per MSA individual
+- **Cap tables**: independent per venture (VCs invest directo en Venture LLC)
+- **Studio stake**: NO — Services LLC es vendor, no shareholder
+
+**Full Studio mode**:
+
+- **Intercompany agreements**: centralizados via Management Co + Holding
+- **Billing**: consolidated via Management Co, luego allocated down to ventures
+- **Reporting**: consolidated financial statements at Holding level
+- **Transfer pricing**: evaluated at Holding level (more complex, often requires big 4 review)
+- **Cap tables**: Holding is shareholder in each venture; additional VC investors per round
+- **Studio stake**: Yes — Holding owns shares/equity de cada Venture Subsidiary
 
 ## ⚠️ DISCLAIMER FISCAL FUERTE
 

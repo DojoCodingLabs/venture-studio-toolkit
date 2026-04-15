@@ -64,7 +64,7 @@ completa en la conversación sin escribir archivos.
 
 ---
 
-## Los 6 patrones cubiertos
+## Los 7 patrones cubiertos
 
 | # | Patrón | Capas | Costo | Cuándo | Tax |
 |---|---|---|---|---|---|
@@ -73,7 +73,8 @@ completa en la conversación sin escribir archivos.
 | 3 | **Delaware Tostada** | DE LLC → LATAM OpCo | $$ | Pre-seed/seed con SAFEs/convertibles | Pass-through |
 | 4 | **Cayman Sandwich** | Cayman HoldCo → DE LLC → LATAM OpCo | $$$$ | Series A+ con VCs internacionales | No Cayman corporate tax |
 | 5 | **Delaware C-Corp** | DE C-Corp → LATAM OpCo | $$$ | Exit US acquirer, QSBS elegibilidad | 21% federal + withholding (21-48% en exit) |
-| 6 | **Multi-LLC + Holding** (futuro) | Holding → múltiples LLCs de ventures | $$$$$ | Studio operator o serial founder con ventures maduras buscando VC | Depende de holding jurisdiction |
+| 6 | **Services Hub + Independent Ventures** (caso @lapc506) | Services LLC + N Venture LLCs (bilateral MSAs) | $$$ | Serial founder con 3+ ventures, shared services, independent VC raises per venture, sin plan fund | Pass-through per venture; Services LLC consolida personal income |
+| 7 | **Multi-LLC + Holding** (futuro) | Holding → múltiples LLCs de ventures | $$$$$ | Studio operator o serial founder con ventures maduras buscando VC + plan de fund atado | Depende de holding jurisdiction |
 
 ---
 
@@ -190,10 +191,11 @@ Basado en las respuestas, aplicar esta lógica en orden:
 | Idea / MVP pre-revenue, bootstrapped, 1 venture | **Skip-CR Pattern** o **Delaware Tostada** | Máxima flexibilidad, mínimo costo |
 | 2-5 ventures personales early-stage, low-liability | **Single-LLC multi-brand** | Costo consolidado, simplicidad fiscal |
 | 2-5 ventures con 1+ high-liability | **Multi-LLC (sin holding aún)** | Aislar la high-liability en su propia entidad |
+| **3+ ventures con shared services + VC raises independent per venture + NO plan fund** | **Services Hub + Independent Ventures** (patrón #6) | Middle ground: shared efficiency sin overhead de holding; raises VC per venture con cap tables limpios |
 | Revenue + pre-seed/seed + SAFEs | **Delaware Tostada** | VCs aceptan SAFEs en LLC; pass-through sigue útil |
 | Revenue + Series A+ con VCs LATAM/globales | **Cayman Sandwich** | Estándar de la industria; 47.7% unicornios LATAM |
 | Revenue + plan exit US-focused | **Delaware C-Corp** | QSBS elegibilidad + familiar para US acquirers |
-| Studio con 5+ ventures, algunas maduras | **Multi-LLC + Holding** | Governance + clean cap tables por venture |
+| Studio con 5+ ventures, 2+ en Series A + plan fund atado | **Multi-LLC + Holding** (patrón #7) | Governance + clean cap tables por venture + holding para LP fund |
 
 ### Regla 3 — Ajustes por residencia fiscal del fundador
 
@@ -297,15 +299,29 @@ Para cada alternativa evaluada, una línea del por qué NO se eligió:
 - **Por qué**: VC necesita priced round, operación local requiere compliance regulatorio, tax efficiency en exit
 - **Migration trigger**: Pre-IPO si planean listar en NASDAQ → considerar flip a Delaware C-Corp
 
+### Caso 4: Serial founder con 4 ventures mixed liability (caso @lapc506)
+
+- **Contexto**: Residente CR, 4 ventures personales (Altrupets animal welfare, Vertivolatam hardware+SaaS, Habitanexus proptech con escrow, Aduanext customs SaaS), liability mix 2×🔴 + 2×🟡, plan VC raises independent per venture, sin plan fund atado
+- **Estructura recomendada**: **Services Hub + Independent Ventures** (patrón #6)
+- **Por qué**: Multi-LLC mandatory por liability contagion; shared services (devs, legal, marketing) worth centralizar; VC raises per venture requieren cap tables limpios independientes; holding formal prematuro hasta que 2+ ventures hit Series A
+- **Estructura específica**: LAPC506 Services LLC (Delaware) + 4 Venture LLCs (Delaware Tostada per venture) + bilateral MSAs + transfer pricing cost-plus 10%
+- **Setup cost**: ~$6-8k (5 LLCs) + MSA templates via skill `services-hub-setup`
+- **Migration trigger**: cuando 2+ ventures hit Series A → evolucionar a Multi-LLC + Holding (patrón #7)
+- **Referencia**: `references/lapc506-services-hub-canonical.md` para ejemplo completo
+
 ---
 
 ## Integración con otras skills del toolkit
 
-- **`structure-evolution-roadmap`** (futuro skill): profundiza el roadmap de migración con triggers específicos
-- **`jurisdiction-matrix`** (futuro skill): matriz comparativa completa de jurisdicciones
-- **`business-model-toolkit`** Fase 13 (Fundación Legal): incluye setup inicial; este skill reemplaza/enriquece esa fase cuando hay múltiples ventures
-- **`accelerator-launchpad`** (futuro skill): si el recomendado es ir a acelerador, el output influye el timing de decisión legal
-- **`cap-table-per-venture`** (futuro skill): solo aplica si el recomendado es Multi-LLC o Holding
+- **`services-hub-setup`**: implementa patrón #6 (Services Hub) con MSA template + transfer pricing methodology + IP assignment rider
+- **`structure-evolution-roadmap`**: profundiza el roadmap de migración con triggers específicos
+- **`jurisdiction-matrix`** (reference doc): matriz comparativa completa de jurisdicciones
+- **`business-model-toolkit`** Fase 13 (Fundación Legal): incluye setup inicial per venture; este skill define la arquitectura macro cross-venture
+- **`accelerator-launchpad`**: si el recomendado es ir a acelerador, el output influye el timing de decisión legal
+- **`cap-table-per-venture`**: aplica en patrones Services Hub (N cap tables independientes), Multi-LLC, y Holding
+- **`when-to-become-studio`**: el readiness assessment route a patrón correcto (#6 Services Hub middle ground, vs #7 formal studio con fund)
+- **`attached-fund-structure`**: solo aplica si patrón elegido es #7 Multi-LLC + Holding con plan de fund atado
+- **`liability-contagion-analysis`**: valida que las ventures NO son combinables bajo single-LLC (rationale para patrones #6 y #7)
 
 ---
 
