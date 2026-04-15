@@ -9,7 +9,7 @@ description: >
   + transfer pricing methodology + IP assignment rider + billing calendar.
   Use when the user asks "services hub", "MSA template", "shared services setup",
   "central services entity", "transfer pricing methodology",
-  "/services-hub-setup", or has chosen Services Hub pattern (patrón #7) via
+  "/services-hub-setup", or has chosen Services Hub pattern (patrón #6) via
   structure-decision skill. STRONG LEGAL DISCLAIMER — MSAs are legal contracts
   that require lawyer review.
 ---
@@ -71,7 +71,7 @@ Español. Términos legales en "español (English)" primera vez.
 ## Prerrequisito: elegir Services Hub como estructura
 
 Antes de correr este skill, confirmar vía `structure-decision` que **Services Hub** (patrón
-#7) es la recomendación correcta para tu scenario.
+#6) es la recomendación correcta para tu scenario.
 
 Señales claras de Services Hub fit:
 
@@ -334,7 +334,7 @@ MSAs pasan a intercompany agreements centralized via Holding.
 
 ## Integración con otras skills
 
-- **`structure-decision`** (prerequisite): debe haber elegido patrón #7 Services Hub
+- **`structure-decision`** (prerequisite): debe haber elegido patrón #6 Services Hub
 - **`liability-contagion-analysis`**: validar que las ventures NO son combinables bajo
   single-LLC (razón de Services Hub + Multi-LLC)
 - **`shared-services-ledger`**: tracking operacional de hours + costs per venture (input

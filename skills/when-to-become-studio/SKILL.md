@@ -115,10 +115,8 @@ Marcar (✓ por cada signal positivo):
 - **Si score 8-9 pero SIN plan fund atado** → NO necesitás formal studio con Holding.
   Stay en Services Hub. Holding + Management Co overhead sin LP fund es waste.
 - **Legacy interpretation (v1.0)**: "7-9 ✓ = listo para studio" era simplification binaria.
-  En v1.1 differentiamos: la mayoría de "ready" are really Services Hub readiness, no
-  formal studio con fund.
-- 5-6 ✓: **Casi listo**. Completar gaps primero.
-- <5 ✓: **NO todavía**. Quedate como serial entrepreneur.
+  En v1.1 differentiamos: la mayoría de "ready" are really Services Hub readiness (Modo 2),
+  no formal studio con fund (Modo 3 requires fund-plan gate).
 
 ---
 
@@ -170,26 +168,36 @@ Si readiness = go, pasos para formalizar:
 
 Presentar las 9 señales una a una. Track scores.
 
-### Paso 2 — Verdict
+### Paso 2 — Verdict (3-mode routing)
 
-**WS-2**: Basado en scores:
+**WS-2**: Basado en scores Y fund plan, enrutar al modo correcto:
 
-- 7-9 ✓: "Estás listo para formalizar como venture studio. Generemos el roadmap."
-- 5-6 ✓: "Casi listo. Los gaps son [list]. Cerrar estos primero."
-- <5 ✓: "Quedate como serial entrepreneur por ahora. Re-evaluar en 6-12 meses."
+- **0-4 ✓** → **Modo 1 — Serial entrepreneur puro**: "Quedate como serial entrepreneur con Multi-LLCs (patrones 1-5 de `structure-decision`). No necesitás más formalización por ahora. Re-evaluar en 6-12 meses."
 
-### Paso 3 — Roadmap (si ready)
+- **5-7 ✓** (con o sin plan fund) → **Modo 2 — Services Hub operator** (NUEVO en v1.1): "Formalizá como Services Hub. Usar `structure-decision` patrón #6 + skill `services-hub-setup` para setup de MSAs + transfer pricing."
 
-**WS-3**: Generar roadmap de transición con:
-- Legal setup (invocar `structure-decision`)
-- Thesis drafting (invocar `studio-thesis`)
-- Methodology documentation (reference plugins + toolkit)
-- Team plan
-- Governance
+- **8-9 ✓ + plan fund atado REAL** (LP conversations iniciadas, NO solo aspiracional) → **Modo 3 — Formal venture studio con fund**: "Formalizá como studio completo. Usar `structure-decision` patrón #7 + skill `attached-fund-structure` para Management Co + GP + LP stack."
 
-### Paso 4 — Close-gaps plan (si not ready)
+- **8-9 ✓ SIN plan fund atado real** → **Modo 2 — Services Hub operator**: "Tenés el readiness score pero sin fund plan, NO necesitás Holding overhead. Usá Services Hub. Re-evaluar a Mode 3 cuando haya LP conversations iniciadas."
 
-**WS-4**: Si <7 ✓, generar plan para cerrar gaps específicos. Re-evaluar en timeline realista.
+### Paso 3 — Roadmap (si Mode 2 o Mode 3)
+
+**WS-3**: Generar roadmap de transición según el modo:
+
+**Si Mode 2 (Services Hub)**:
+- `structure-decision` patrón #6 (Services Hub + Independent Ventures)
+- `services-hub-setup` para MSA template + transfer pricing
+- `shared-services-ledger` variant Services Hub
+
+**Si Mode 3 (Formal studio con fund)**:
+- `structure-decision` patrón #7 (Multi-LLC + Holding)
+- `attached-fund-structure` para Management Co + GP + LP
+- `studio-thesis` + `studio-focus` + `secret-sauce` para LP-facing materials
+- `shared-services-ledger` variant Full Studio
+
+### Paso 4 — Close-gaps plan (si Mode 1)
+
+**WS-4**: Si 0-4 ✓, generar plan para cerrar gaps específicos hacia Mode 2. Re-evaluar en timeline realista (6-12 meses).
 
 ---
 
