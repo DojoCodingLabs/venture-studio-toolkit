@@ -3,6 +3,37 @@
 All notable changes to `venture-studio-toolkit` documented in this file. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) + [Semantic Versioning](https://semver.org/).
 
+## [1.2.0] — 2026-04-15
+
+### Added — Documentation + v1.1 refinements
+
+**README enhancement**:
+
+- **Gastronomic analogy section** — explica Tostada 🫓, Sandwich 🥪, Mil hojas 🥐 como
+  naming convention de abogados LATAM (Latitud, Manzano Law, Cooley). Usuarios no-legales
+  pueden entender cada patrón visualmente. Con diagramas Mermaid verticales.
+- **Mermaid diagrams** — reemplaza ASCII art por diagramas Mermaid `flowchart TD` en:
+  - README Tostada + Sandwich structures
+  - `attached-fund-structure` govclab architecture (Management Co → GP → Fund → Portfolio)
+  - `references/lapc506-services-hub-canonical.md` caso @lapc506 architecture
+- **MCP integrations section** en README — pointer a `mcp-integrations-guide.md`
+
+**New reference documents**:
+
+- `references/bilingual-output-guide.md` — schema YAML config completo para bilingual
+  (es/en) output, translation preservation rules (NO traducir "Delaware Tostada",
+  "Cayman Sandwich", nombres legales de jurisdicciones, acrónimos financieros),
+  implementation roadmap per skill (v1.3+)
+- `references/mcp-integrations-guide.md` — qué MCPs enhance qué skills (Linear, Context7,
+  GitHub, Slack opt-in, Figma, Playwright), pattern de integration recomendado
+  (MCP detection + manual fallback), roadmap de implementation
+
+### Pending to implement (documented, not in skills yet)
+
+La v1.2 establece el **framework** para bilingual + MCP integration pero **NO implementa
+todavía en skills individuales**. Implementation gradual en v1.3+ basado en dog-food
+demand. Documentation-first approach para design validation antes de touching 22 skills.
+
 ## [1.1.0] — 2026-04-14
 
 ### Added — Services Hub pattern (middle-ground entre serial entrepreneur y formal studio)
