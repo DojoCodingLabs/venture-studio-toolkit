@@ -1,6 +1,6 @@
 ---
 name: attached-fund-structure
-version: 1.0.0
+version: 1.1.0
 description: >
   Designs the legal structure for attaching a venture fund to a studio —
   Management Co + GP entity + LP entity layered per govclab recommendation.
