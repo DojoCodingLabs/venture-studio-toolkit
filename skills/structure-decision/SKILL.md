@@ -17,7 +17,7 @@ description: >
 # Decisión de Estructura Corporativa
 
 Guía al fundador / operador de studio a través de un árbol de decisión para elegir la
-estructura legal correcta para sus ventures. Cubre los 6 patrones principales usados por
+estructura legal correcta para sus ventures. Cubre los 7 patrones principales usados por
 startups LATAM con ambiciones globales.
 
 ## Regla de idioma
@@ -211,7 +211,7 @@ Generar `./portfolio/{name}/structure-decision.md` con estas secciones:
 
 ### 1. Decisión recomendada
 
-- **Estructura primaria**: `[uno de los 6 patrones]`
+- **Estructura primaria**: `[uno de los 7 patrones]`
 - **Confianza**: 🟢 Alta / 🟡 Media / 🔴 Baja (explicar por qué)
 - **One-liner rationale**: `[por qué esta estructura matchea el perfil]`
 
