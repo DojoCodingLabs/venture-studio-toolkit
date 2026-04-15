@@ -3,6 +3,72 @@
 All notable changes to `venture-studio-toolkit` documented in this file. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) + [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] — 2026-04-14
+
+### Added — Services Hub pattern (middle-ground entre serial entrepreneur y formal studio)
+
+**Driven by dog-food of v1.0** ([DOJ-3190](https://linear.app/dojo-coding/issue/DOJ-3190))
+against @lapc506 4-venture portfolio. Reveló gap: users con 3-5 ventures wanting shared
+services + independent VC raises per venture no tenían pattern — skill saltaba de Multi-LLC
+(pattern #2/#3) a Multi-LLC+Holding (pattern #7) sin middle ground. Services Hub llena el gap.
+
+Parent Epic: [DOJ-3193](https://linear.app/dojo-coding/issue/DOJ-3193)
+
+**New skill**:
+
+- `services-hub-setup` ([DOJ-3195](https://linear.app/dojo-coding/issue/DOJ-3195)) —
+  implementa Services Hub Model: Services LLC central + N independent Venture LLCs +
+  bilateral MSAs. Genera MSA template + SOW template + transfer pricing methodology
+  (cost-plus 10% default, OECD-defensible) + IP assignment rider + billing calendar.
+  Strong legal disclaimer requiring lawyer review.
+
+**New reference document**:
+
+- `references/lapc506-services-hub-canonical.md` ([DOJ-3199](https://linear.app/dojo-coding/issue/DOJ-3199)) —
+  canonical example aplicando Services Hub Model a @lapc506 4-venture scenario (Altrupets,
+  Vertivolatam, Habitanexus, Aduanext). Concrete numbers: $6k setup, $4.4k annual.
+  Referenced por `services-hub-setup`, `structure-decision`, `when-to-become-studio`.
+
+**Updated skills**:
+
+- `structure-decision` ([DOJ-3194](https://linear.app/dojo-coding/issue/DOJ-3194)) —
+  added **pattern #6: Services Hub + Independent Ventures**. Shifted previous #6
+  (Multi-LLC + Holding) to #7. Updated decision tree Regla 2 to route 3+ ventures con
+  shared services + independent VC raises + no-fund a Services Hub. Added canonical
+  case 4 (@lapc506 Services Hub).
+
+- `when-to-become-studio` v1.1.0 ([DOJ-3196](https://linear.app/dojo-coding/issue/DOJ-3196)) —
+  refactored from binary (ready/not ready) a **3 operating modes**:
+  - Mode 1: Serial entrepreneur puro (0-4 signals) → Multi-LLC sin hub
+  - Mode 2: Services Hub operator (5-7 signals) → `services-hub-setup` skill (NUEVO)
+  - Mode 3: Formal studio con fund (8+ signals + plan fund) → `attached-fund-structure`
+
+- `shared-services-ledger` v1.1.0 ([DOJ-3197](https://linear.app/dojo-coding/issue/DOJ-3197)) —
+  added operating mode selection: Services Hub (bilateral MSAs, independent cap tables)
+  vs. Full Studio (centralized via holding). Cada mode con distinct billing, reporting,
+  transfer pricing implications.
+
+- `attached-fund-structure` ([DOJ-3198](https://linear.app/dojo-coding/issue/DOJ-3198)) —
+  added upfront "¿Este skill es para vos?" section clarifying it's for studios con
+  fund-attached plans, NOT serial entrepreneurs. Routes users a `services-hub-setup`
+  o `when-to-become-studio` si no aplica.
+
+### Fixed / improved
+
+- Naming consistency: patterns #1-#7 explicitly numbered across all skills
+- Cross-references updated: all skill integrations sections reflect new pattern #6
+- Case study `dojocoding-labs-canonical-thesis.md` references unchanged (DojoCoding Labs
+  es Skip-CR pattern #1, no Services Hub)
+
+### Pending for v1.2
+
+- Cross-plugin: update `business-model-toolkit` Fase 13 con Services Hub reference
+  ([DOJ-3200](https://linear.app/dojo-coding/issue/DOJ-3200)) — requiere separate PR en
+  `business-model-toolkit` repo
+- Dog-food the new Services Hub pattern con real-world user outside @lapc506 case
+- Implement bilingual output (es/en) per YAML config (deferred from v1.0)
+- Add MCP integration for Linear / Carta / Mercury (deferred from v1.0)
+
 ## [1.0.0] — 2026-04-14
 
 ### Added — Complete initial scope (21 skills + 2 reference docs)
