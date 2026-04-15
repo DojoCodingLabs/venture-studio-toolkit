@@ -85,26 +85,38 @@ mode: studio  # or founder
 
 ## Estado actual
 
-**🚧 Work in progress — v0.1.0**
+**v1.0.0 — Initial feature-complete release**
 
-Este plugin está en fase inicial de construcción. SPIKE tracking: [DOJ-3190](https://linear.app/dojo-coding/issue/DOJ-3190).
+Completed scope del SPIKE [DOJ-3190](https://linear.app/dojo-coding/issue/DOJ-3190): **21 skills + 2 reference docs + scaffolding**.
 
-**Completado**:
+⚠️ **Disclaimer de stability**: v1.0.0 marca **feature-completeness** (scope cumplido per SPIKE), NO **maturity**. El plugin está en fase de **dog-food** y aún no battle-tested con usuarios externos. Durante la serie v1.x:
 
-- ✅ Scaffolding del repo (plugin.json, LICENSE, README, gitignore)
-- ✅ Primer skill: `structure-decision`
+- **Semver deviation intencional**: puede haber breaking changes en releases menores (v1.1, v1.2, etc.) mientras iteramos sobre feedback de dog-food real. Esto viola semver tradicional deliberadamente — es un trade-off consciente para permitir rápida iteración en esta fase inicial.
+- **Strict semver compliance arranca en v2.0.0** una vez validado con ≥3 usuarios externos completando flows end-to-end. Desde v2.0 en adelante, breaking changes requieren major version bump.
+- **Cambios esperados en v1.x**: skill APIs, output formats, template structures pueden cambiar basado en findings del dog-food.
 
-**En progreso**:
+Si necesitás stability garantizada, esperar a v2.0.0. Para exploración activa + feedback loop, v1.x es apropiado. See [CHANGELOG.md](./CHANGELOG.md) para historial de cambios.
 
-- 🚧 `studio-thesis` (govclab 37-word)
-- 🚧 `accelerator-launchpad`
+### Skills completos (21)
 
-**Pendiente** (roadmap):
+**Core (10)** — ambos modos:
+- `structure-decision` | `structure-evolution-roadmap` | `jurisdiction-matrix` (reference doc) | `accelerator-launchpad` | `three-horizons` | `explore-exploit` | `innovation-scorecard` | `cost-of-delay-cd3` | `sweat-equity-agreement` | `improvement-kata`
 
-- ⏳ `structure-evolution-roadmap`, `jurisdiction-matrix`
-- ⏳ Studio mode skills (9 skills)
-- ⏳ Founder mode skills (3 skills)
-- ⏳ Core skills restantes (three-horizons, innovation-scorecard, cost-of-delay-cd3, etc.)
+**Studio mode (9)**:
+- `studio-thesis` | `studio-focus` | `secret-sauce` | `studio-archetype-selector` | `vertical-charter` | `shared-services-ledger` | `venture-spin-out-playbook` | `attached-fund-structure` | `mensarius-oath-adoption`
+
+**Founder mode (3)**:
+- `liability-contagion-analysis` | `cap-table-per-venture` | `when-to-become-studio`
+
+### ⚠️ Disclaimers legales
+
+Skills que tocan dominios legales/fiscales incluyen explicit disclaimers:
+- `structure-decision`, `structure-evolution-roadmap`, `jurisdiction-matrix`
+- `sweat-equity-agreement`, `cap-table-per-venture`
+- `attached-fund-structure`, `venture-spin-out-playbook`
+- `shared-services-ledger`, `liability-contagion-analysis`
+
+Estos skills generan material de preparación estructurada — **NO son asesoría legal**. Validar con abogados especializados antes de actuar.
 
 ## Instalación
 
