@@ -309,7 +309,7 @@ Each venture has an MSA with studio. See `/intercompany-agreements/`:
 ## Principios clave
 
 - **Arm's-length NO optional**: tax authorities enforce this
-- **Cost-plus con markup razonable (5-15%)**: most defensible methodology
+- **Cost-plus con markup razonable (5-10% services típicos; hasta 15% para specialized skills high-value)**: most defensible methodology
 - **Documentation is everything**: methodology + MSAs + periodic review
 - **Annual review minimum**: costs + benchmarks change
 - **Automation valuable**: time tracking + revenue data automation reduces errors

@@ -87,7 +87,7 @@ mode: studio  # or founder
 
 **v1.0.0 — Initial feature-complete release**
 
-Completed scope del SPIKE [DOJ-3190](https://linear.app/dojo-coding/issue/DOJ-3190): **21 skills + 1 reference doc + scaffolding**.
+Completed scope del SPIKE [DOJ-3190](https://linear.app/dojo-coding/issue/DOJ-3190): **21 skills + 2 reference docs + scaffolding**.
 
 ⚠️ **Disclaimer de stability**: v1.0.0 marca feature-completeness per plan original, pero **NO está battle-tested**. Breaking changes posibles en v1.x mientras dog-fooding revela issues. See [CHANGELOG.md](./CHANGELOG.md) for detailed release notes.
 

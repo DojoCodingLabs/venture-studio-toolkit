@@ -218,16 +218,25 @@ Generar `./portfolio/{studio}/ventures/{venture}/cap-table/current.md`:
 
 ### Scenario: Seed $3M @ $12M post-money
 
+Numerical example (cada columna suma 100%):
+
 | Shareholder | Pre-round % | Post-round % | Dilution |
 |---|---|---|---|
-| Founder 1 | 45% | 32% | -13% |
-| Founder 2 | 35% | 25% | -10% |
-| Studio | 20% | 14% | -6% |
-| Employee pool (refreshed) | 10% | 15% | +5% |
-| SAFE 1 (converts) | — | 7% | — |
-| SAFE 2 (converts) | — | 5% | — |
-| New lead VC | — | 25% | — |
-| New secondary VC | — | 8% | — |
+| Founder 1 | 40% | 28% | -12 pp |
+| Founder 2 | 30% | 21% | -9 pp |
+| Studio | 20% | 14% | -6 pp |
+| Employee pool | 10% | 15% | +5 pp (refreshed before round) |
+| SAFE 1 (converts) | — | 4% | — |
+| SAFE 2 (converts) | — | 3% | — |
+| New lead VC | — | 12% | — |
+| New secondary VC | — | 3% | — |
+| **Total** | **100%** | **100%** | — |
+
+Notas:
+
+- "Dilution" se expresa en **pp** (percentage points), no en porcentaje relativo
+- SAFE conversion percentages dependen de valuation cap, discount, y MFN — los valores acá son ilustrativos
+- Employee pool refresh (10% → 15%) se hace **antes del round**, por lo que dilute solo a founders + studio, no al nuevo VC
 
 ## Key terms in documents
 
