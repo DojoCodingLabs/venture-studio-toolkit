@@ -1,0 +1,17 @@
+name = "Venture Studio Toolkit"
+tagline = "Gestión de portafolio para [venture studios]"
+chips = ["22 skills"]
+meta = "Código disponible · Claude Code"
+tile = "/"
+alt = "Venture Studio Toolkit por Dojo Coding: Gestión de portafolio para venture studios"
+
+[card]
+kind = "ledger"
+label = "Toolkit"
+status = "v1.2.0 · BSL-1.1"
+rows = [
+  ["structure-decision", "Tostada, Sandwich o Skip-CR", "core"],
+  ["three-horizons", "Portafolio H1 / H2 / H3", "core"],
+  ["studio-thesis", "Template govclab de 37 palabras", "studio"],
+  ["cap-table-per-venture", "Cap tables multi-LLC", "founder"],
+]
