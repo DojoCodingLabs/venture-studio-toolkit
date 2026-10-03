@@ -1,8 +1,24 @@
-# venture-studio-toolkit
+<p align="center">
+  <a href="https://dojocoding.io">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="docs/assets/banner-light.svg">
+      <img alt="Venture Studio Toolkit por Dojo Coding: Gestión de portafolio para venture studios" src="docs/assets/banner-light.svg" width="100%">
+    </picture>
+  </a>
+</p>
+
+# Venture Studio Toolkit
+
+**Plugin de Claude Code para venture studios y founders con varias startups: estructura legal, portafolio y aceleradoras.**
 
 > **Macro portfolio management** para venture studios y serial founders — estructuras legales LATAM, matching de aceleradoras, frameworks govclab, y gestión de portafolio multi-venture.
 
 Plugin de Claude Code complementario a [`business-model-toolkit`](https://github.com/DojoCodingLabs/business-model-toolkit) (single-venture) y [`ux-research-toolkit`](https://github.com/DojoCodingLabs/ux-research-toolkit) (user research). Mientras esos operan a nivel de **un** venture individual, `venture-studio-toolkit` opera a nivel **portafolio**: decisiones de estructura legal macro, asignación de recursos entre ventures, y matching a programas de aceleración externos.
+
+[![Licencia BSL-1.1](https://img.shields.io/badge/licencia-BSL--1.1-FF7151?labelColor=201E3D)](LICENSE) [![Versión 1.2.0](https://img.shields.io/badge/versi%C3%B3n-1.2.0-FF7151?labelColor=201E3D)](.claude-plugin/plugin.json) [![Plugin de Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-201E3D?labelColor=201E3D)](#instalación)
+
+[Empezar](#instalación) · [Cuándo usarlo](#cuándo-usar-este-plugin) · [Skills](#skills-completos-22) · [Reportar un problema](https://github.com/DojoCodingLabs/venture-studio-toolkit/issues/new)
 
 ## ¿Cuándo usar este plugin?
 
@@ -195,7 +211,7 @@ Si necesitás stability garantizada, esperar a v2.0.0. Para exploración activa 
 - `bilingual-output-guide.md` (nuevo en v1.2) — YAML config schema + translation rules
 - `mcp-integrations-guide.md` (nuevo en v1.2) — MCPs que enhance qué skills
 
-### ⚠️ Disclaimers legales
+### Disclaimers legales
 
 Skills que tocan dominios legales/fiscales incluyen explicit disclaimers:
 - `structure-decision`, `structure-evolution-roadmap`, `jurisdiction-matrix`
@@ -221,4 +237,8 @@ claude plugin add DojoCodingLabs/venture-studio-toolkit
 
 ## Licencia
 
-Business Source License 1.1 (BSL-1.1). Ver [LICENSE](./LICENSE) para detalles.
+Business Source License 1.1 (BSL-1.1). Ver [LICENSE](./LICENSE) para detalles. Construido por [Dojo Coding](https://dojocoding.io).
+
+<p align="center">
+  <a href="https://dojocoding.io"><img src="docs/assets/dojocoding-mark.png" alt="Dojo Coding" width="48"></a>
+</p>
